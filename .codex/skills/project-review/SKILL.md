@@ -1,44 +1,44 @@
 ---
 name: project-review
-description: Project-specific review workflow for checking local changes against this repository's architecture, ADR technology choices, tests, AGENTS.md CRITICAL rules, and build health. Use when Codex is asked to review current changes, validate a harness step, check implementation quality, or report violations before committing or continuing work.
+description: 이 저장소 전용 리뷰 워크플로로, 로컬 변경 사항을 저장소 아키텍처, ADR 기술 선택, 테스트, AGENTS.md의 CRITICAL 규칙, 빌드 상태와 대조해 확인할 때 사용한다. Codex가 현재 변경 사항을 리뷰하거나, harness step을 검증하거나, 구현 품질을 확인하거나, commit 또는 후속 작업 전에 위반 사항을 보고해야 할 때 사용한다.
 ---
 
 # Project Review
 
-Review this project's changes against the repository rules and implementation documents. Lead with concrete findings and file references when there are problems.
+이 프로젝트의 변경 사항을 저장소 규칙과 구현 문서에 맞춰 리뷰한다. 문제가 있으면 구체적인 finding과 파일 참조를 먼저 제시한다.
 
-## Required Context
+## 필수 맥락
 
-Read these files before reviewing:
+리뷰 전에 다음 파일을 읽는다.
 
 - `/AGENTS.md`
 - `/docs/ARCHITECTURE.md`
 - `/docs/ADR.md`
 
-Also inspect the changed files using `git status`, `git diff`, and targeted file reads.
+또한 `git status`, `git diff`, 대상 파일 읽기를 사용해 변경된 파일을 확인한다.
 
-## Checklist
+## 체크리스트
 
-Verify these items:
+다음 항목을 검증한다.
 
-1. Architecture compliance: changed files follow the directory structure and boundaries in `ARCHITECTURE.md`.
-2. Technology stack compliance: implementation stays within the technology choices in `ADR.md`.
-3. Test coverage: new functionality has relevant tests.
-4. CRITICAL rules: no rule in `AGENTS.md` marked CRITICAL is violated.
-5. Build health: the documented build and test commands pass, or any inability to run them is reported clearly.
+1. 아키텍처 준수: 변경된 파일이 `ARCHITECTURE.md`의 디렉터리 구조와 경계를 따른다.
+2. 기술 스택 준수: 구현이 `ADR.md`의 기술 선택 범위 안에 머문다.
+3. 테스트 커버리지: 새 기능에 관련 테스트가 있다.
+4. CRITICAL 규칙: `AGENTS.md`에서 CRITICAL로 표시된 규칙을 위반하지 않는다.
+5. 빌드 상태: 문서화된 빌드 및 테스트 명령이 통과하거나, 실행할 수 없는 경우 그 이유를 명확히 보고한다.
 
-## Commands
+## 명령어
 
-Prefer the commands defined by this repository. If package scripts do not exist, use the closest available project-specific validation command and report the substitution.
+이 저장소가 정의한 명령어를 우선 사용한다. package script가 없으면 가장 가까운 프로젝트 전용 검증 명령을 사용하고, 대체한 내용을 보고한다.
 
 ```bash
 npm run build
 npm test
 ```
 
-## Output
+## 출력
 
-If issues are found, list findings first in severity order with file and line references. Then provide this checklist table:
+이슈가 발견되면 severity 순서로 finding을 먼저 나열하고 파일 및 line reference를 포함한다. 그 다음 아래 체크리스트 표를 제공한다.
 
 | Item | Result | Notes |
 | --- | --- | --- |
@@ -48,4 +48,4 @@ If issues are found, list findings first in severity order with file and line re
 | CRITICAL rules | PASS/FAIL | {details} |
 | Build health | PASS/FAIL | {details} |
 
-For each violation, propose a concrete fix. If no issues are found, state that clearly and mention any tests or checks that were not run.
+각 위반 사항에는 구체적인 수정 방안을 제안한다. 이슈가 없으면 그 사실을 명확히 말하고, 실행하지 못한 테스트나 점검이 있으면 함께 언급한다.
