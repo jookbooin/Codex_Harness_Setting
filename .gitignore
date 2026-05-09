@@ -6,6 +6,7 @@ tsconfig.tsbuildinfo
 .tmp/
 __pycache__/
 *.pyc
+reference/
 
 # phase execution outputs
 phases/**/phase*-output.json
