@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+tsconfig.tsbuildinfo
+.tmp/
+__pycache__/
+*.pyc
+
+# phase execution outputs
+phases/**/phase*-output.json
+phases/**/step*-output.json

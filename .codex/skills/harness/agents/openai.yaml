@@ -1,0 +1,4 @@
+interface:
+  display_name: "Harness"
+  short_description: "Plan and run phased project steps."
+  default_prompt: "Use $harness to design and execute a phased implementation plan."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Review"
+  short_description: "Review changes against project rules."
+  default_prompt: "Use $project-review to review this project's current changes."

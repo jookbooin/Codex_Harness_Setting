@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+set -eu
+
+echo "[pre-commit] Running lint, build, and test checks..."
+
+if [ ! -f package.json ]; then
+  echo "[pre-commit] package.json not found; skipping npm checks."
+  exit 0
+fi
+
+npm run lint
+npm run build
+npm run test
+
+echo "[pre-commit] All checks passed."
